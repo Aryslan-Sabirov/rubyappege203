@@ -1,37 +1,37 @@
-%nav.navbar.navbar-light.bg-light.navbar-expand-lg
-  .container
-    %a.navbar-brand{:href => "#"} Navbar
-    %button.navbar-toggler{"aria-controls" => "navbarAdvanced", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarAdvanced", "data-bs-toggle" => "collapse", :type => "button"}
-      %span.navbar-toggler-icon
-    #navbarAdvanced.collapse.navbar-collapse
-      - if current_user
-        %ul.navbar-nav.mb-2.mb-lg-0.me-auto
-          %li.nav-item
-            %a.nav-link.active{"aria-current" => "page", :href => "#"} Active
-          %li.nav-item
-            %a.nav-link{:href => "#"} Link
-          %li.nav-item
-            %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
-        .form-inline.my-2.my-lg-0
-          = form_tag(tasks_path, method: :get) do
-            .input-group
-              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Find a task", class: 'form-control-sm'
-              %span.input-group-append
-              %button.btn.btn-primary.btn-sm{:type => "submit"}                
-                %span.fa.fa-search{"aria-hidden" => "true"}
-        %ul.navbar-nav.mr-right
-          %li.nav-item.dropdown
-            %a#navbarAdvancedDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"} 
-              %b= current_user.email
-            %ul.dropdown-menu{"aria-labelledby" => "navbarAdvancedDropdown"}
-              = link_to edit_user_registration_path, class: "dropdown-item" do
-                .fa.fa-cog
-                %b Account settings
-              = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
-                .fa.fa-sign-out-alt
-                %b Sign out
-      - else 
-        %ul.navbar-nav
-          %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
-          %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+// %nav.navbar.navbar-light.bg-light.navbar-expand-lg
+//   .container
+//     %a.navbar-brand{:href => "#"} Navbar
+//     %button.navbar-toggler{"aria-controls" => "navbarAdvanced", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarAdvanced", "data-bs-toggle" => "collapse", :type => "button"}
+//       %span.navbar-toggler-icon
+//     #navbarAdvanced.collapse.navbar-collapse
+//       - if current_user
+//         %ul.navbar-nav.mb-2.mb-lg-0.me-auto
+//           %li.nav-item
+//             %a.nav-link.active{"aria-current" => "page", :href => "#"} Active
+//           %li.nav-item
+//             %a.nav-link{:href => "#"} Link
+//           %li.nav-item
+//             %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+//         .form-inline.my-2.my-lg-0
+//           = form_tag(tasks_path, method: :get) do
+//             .input-group
+//               = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Find a task", class: 'form-control-sm'
+//               %span.input-group-append
+//               %button.btn.btn-primary.btn-sm{:type => "submit"}                
+//                 %span.fa.fa-search{"aria-hidden" => "true"}
+//         %ul.navbar-nav.mr-right
+//           %li.nav-item.dropdown
+//             %a#navbarAdvancedDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"} 
+//               %b= current_user.email
+//             %ul.dropdown-menu{"aria-labelledby" => "navbarAdvancedDropdown"}
+//               = link_to edit_user_registration_path, class: "dropdown-item" do
+//                 .fa.fa-cog
+//                 %b Account settings
+//               = link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do
+//                 .fa.fa-sign-out-alt
+//                 %b Sign out
+//       - else 
+//         %ul.navbar-nav
+//           %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+//           %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
           
