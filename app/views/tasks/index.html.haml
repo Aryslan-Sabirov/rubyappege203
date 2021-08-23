@@ -1,0 +1,9 @@
+.container
+  %h1 Listing task
+    
+  = link_to 'New Task', new_task_path
+  
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4.mb-2
+  - @tasks.each do |task|
+    = render 'tasks/task', task: task 
+        
